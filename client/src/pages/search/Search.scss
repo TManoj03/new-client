@@ -1,0 +1,9 @@
+@import "../../style.scss";
+
+.Search{
+    @include themify($themes){
+        background-color: themed("bgSoft");
+        padding: 20px 70px;
+        min-height: 100vh ;
+    }
+}
