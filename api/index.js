@@ -6,6 +6,7 @@ import commentRoutes from "./routes/commentsR.js"
 import relationshipRoutes from "./routes/relationshipR.js"
 import likeRoutes from "./routes/likesR.js"
 import authRoutes from "./routes/authR.js"
+import searchRoutes from "./routes/searchR.js"
 import cors from "cors"
 import cookieParser from "cookie-parser";
 import multer from "multer";
@@ -45,6 +46,7 @@ app.use('/api/comments',commentRoutes);
 app.use('/api/likes',likeRoutes);
 app.use('/api/auth',authRoutes);
 app.use('/api/relationship',relationshipRoutes);
+app.use('/search',searchRoutes);
 
 app.listen(8800, ()=>{
     console.log('working');

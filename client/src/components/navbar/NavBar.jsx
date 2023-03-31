@@ -1,5 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './NavBar.scss'
+
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
@@ -12,7 +13,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { DarkModeContext } from '../../context/darkModeContext';
 import { AuthContext } from '../../context/authContext';
 import logo from '../../assets/logo.png';
-// import axios from "axios";
+import axios from "axios";
+import Search from '../search/Search';
+
+
 
 function NavBar() {
 
@@ -26,6 +30,22 @@ function NavBar() {
       navigate('/login');
   }
 
+  const handleSearch = async (e) =>{
+    const SearchValue = e.target.value;
+    if(!SearchValue){
+      console.log('searchValue is Empty');
+      navigate(`/`);
+    }
+    else{
+
+      navigate(`/?q=${SearchValue}`);
+      // const res = await axios.get(`http://localhost:8800/search/${SearchValue}`);
+      // setResult(res.data)
+      // console.log(result)
+      // console.log(typeof(result))
+      // setValue(1);
+    }
+  }
   return (
     <div className="navbar">
       <div className="left">
@@ -44,8 +64,14 @@ function NavBar() {
           <GridViewOutlinedIcon />
           <div className="search">
             <SearchOutlinedIcon />
-            <input type="text" name="" id="" placeholder='Search' />
+            <form>
+             <input type="text" name="Search" id="Search" placeholder='Search' onChange={handleSearch} />
+            </form>
           </div>
+          {
+            
+          // (value === 1 ? <Search data={result} /> : console.log('SearchValue is Empty'))
+          }
       </div>
       <div className="right">
         <Link

@@ -26,7 +26,7 @@ function Register() {
     e.preventDefault();
 
     try{
-      await axios.post("http://localhost:8800/api/auth/register", inputs);
+      await axios.post("https://api-host-nned.onrender.com/api/auth/login/api/auth/register", inputs);
       navigate('/login')
     }
     catch(err){

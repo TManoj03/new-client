@@ -1,0 +1,31 @@
+@import "../../style.scss";
+
+.SearchMain{
+    @include themify($themes){
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    z-index: 10100;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        // width: 500px;
+        // height: 200px;
+    .Search{
+       
+        
+        
+        
+        span:hover{
+            align-items: center;
+        }
+    }
+}
+
+}
+
+
+       

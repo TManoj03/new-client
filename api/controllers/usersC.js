@@ -34,3 +34,14 @@ export const updateUser = (req,res)=>{
         });
     });
 };
+
+export const allUser = (req, res) => {
+    const q = "SELECT * FROM users ORDER BY name ASC";
+  
+    db.query(q, (err, data) => {
+      if (err) return res.status(500).json(err);
+      const result = data;
+      return res.status(200).json(result);
+    });
+  };
+  

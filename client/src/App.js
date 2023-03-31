@@ -22,7 +22,7 @@ import {
   QueryClient,
   QueryClientProvider,
   } from '@tanstack/react-query'
-import Search from './pages/search/Search';
+import Search from './components/search/Search';
 
 function App() {
 
@@ -70,8 +70,8 @@ function App() {
           element: <Profile />
         },
         {
-          path: "/Search",
-          element: <Search />
+          path:"/search/",
+          element:<Search />
         }
       ]
     },
